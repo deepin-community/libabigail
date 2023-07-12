@@ -1,0 +1,17 @@
+Index: b/libabigail.pc.in
+===================================================================
+--- a/libabigail.pc.in
++++ b/libabigail.pc.in
+@@ -1,11 +1,10 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-libdir=@libdir@
+ includedir=@includedir@
+ 
+ Name: libabigail
+ Description: The ABI Generic Analysis and Instrumentation Library
+ Version: @VERSION@
+ Requires.private: libxml-2.0 >= @LIBXML2_VERSION@
+-Libs: -L${libdir} -labigail
++Libs: -labigail
+ Cflags: -I${includedir}/libabigail

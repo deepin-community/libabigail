@@ -1,0 +1,3 @@
+arch-indep-pkgconfig.diff
+#python3-only.diff
+autoconf-updates.diff
