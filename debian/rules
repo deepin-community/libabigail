@@ -1,4 +1,43 @@
 #!/usr/bin/make -f
+#DH_VERBOSE = 1
+
+include /usr/share/dpkg/default.mk
+
+builddir=build
 
 %:
-	dh $@
+	dh $@ --builddirectory $(builddir) --with autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--enable-ctf \
+		--enable-cxx11 \
+		--enable-bash-completion=yes \
+		--enable-apidoc=yes \
+		--enable-manual=yes \
+		--disable-silent-rules \
+		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		$(shell dpkg-buildflags --export=cmdline)
+
+override_dh_auto_build:
+	dh_auto_build
+	$(MAKE) -C $(builddir)/doc/manuals html-doc man info
+#	$(MAKE) -C $(builddir)/doc apidoc-html-doxygen
+
+override_dh_auto_test:
+	-tmp=$$(mktemp -d); \
+	XDG_CACHE_HOME=$$tmp dh_auto_test
+
+override_dh_makeshlibs:
+	: # For new symbols when compiled with GCC 7
+	dh_makeshlibs -V'libabigail0 (>= 1.0~rc6-2~)'
+
+override_dh_auto_install:
+	dh_auto_install
+	$(MAKE) -C $(builddir)/doc/manuals install-man-and-info-doc \
+		DESTDIR=$(CURDIR)/debian/tmp
+#	$(MAKE) -C $(builddir)/doc apidoc-install-html-doxygen \
+#		DESTDIR=$(CURDIR)/debian/tmp
+	gunzip debian/tmp/usr/share/info/*.gz
+	mkdir -p debian/tmp/usr/share/bash-completion/completions
+	cp bash-completion/abi* debian/tmp/usr/share/bash-completion/completions/.

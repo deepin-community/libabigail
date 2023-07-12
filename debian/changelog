@@ -1,5 +1,214 @@
-template-repository (1.0-1) unstable; urgency=medium
+libabigail (2.3-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matthias Klose <doko@debian.org>  Sun, 11 Jun 2023 17:20:47 +0200
+
+libabigail (2.2-2) unstable; urgency=medium
+
+  * Configure with --enable-ctf.
+  * build-depend on: binutils-dev, python3-xdg, python3-rpm, python3-mock,
+    rpm.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 05 Feb 2023 09:28:17 +0100
+
+libabigail (2.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update watch file.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 05 Feb 2023 08:38:58 +0100
+
+libabigail (2.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update d/copyright to reflect license change to Apache.2.0 plus
+    LLVM exception.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 22 Oct 2022 12:03:06 +0200
+
+libabigail (2.0-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 11 Oct 2021 14:00:17 +0200
+
+libabigail (1.8-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump debhelper and standards version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 02 Dec 2020 12:17:04 +0100
+
+libabigail (1.7-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump debhelper and standards version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 29 Apr 2020 13:34:02 +0200
+
+libabigail (1.6-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 10 Apr 2019 10:57:16 +0200
+
+libabigail (1.5-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 10 Nov 2018 21:15:40 +0100
+
+libabigail (1.4-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 21 Jul 2018 13:06:12 +0200
+
+libabigail (1.2-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 24 Apr 2018 06:19:18 +0200
+
+libabigail (1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 06 Feb 2018 10:55:25 +0100
+
+libabigail (1.0~rc6-2) unstable; urgency=medium
+
+  * Bump standards version.
+  * Build using GCC 7 and tighten dependency on the shared library.
+    Closes: #871273.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 07 Aug 2017 10:58:04 -0400
+
+libabigail (1.0~rc6-1) unstable; urgency=medium
+
+  * Upstream release candidate.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 25 Nov 2016 00:18:13 +0100
+
+libabigail (1.0~rc5-4) unstable; urgency=medium
+
+  * Set XDG_CACHE_HOME for running the tests.
+  * Build-Depend on python, needed for the tests.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 15 Sep 2016 21:28:27 +0000
+
+libabigail (1.0~rc5-3) unstable; urgency=medium
+
+  * Fix valgrind build dependency. 
+
+ -- Matthias Klose <doko@debian.org>  Thu, 15 Sep 2016 19:26:48 +0200
+
+libabigail (1.0~rc5-2) unstable; urgency=medium
+
+  * Fix python configure check (Dodji Seketeli).
+
+ -- Matthias Klose <doko@debian.org>  Wed, 14 Sep 2016 14:28:54 +0200
+
+libabigail (1.0~rc5-1) unstable; urgency=medium
+
+  * Upstream release candidate.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 11 Sep 2016 15:55:18 +0200
+
+libabigail (1.0~rc4-1) unstable; urgency=medium
+
+  * Upstream release candidate.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 29 May 2016 19:30:08 +0200
+
+libabigail (1.0~rc3-1) unstable; urgency=medium
+
+  * Upstream release candidate.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 10 Mar 2016 12:18:40 +0100
+
+libabigail (1.0~rc2-1) unstable; urgency=medium
+
+  * Upstream release candidate.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 12 Jan 2016 12:30:48 +0100
+
+libabigail (0.1~20150922-1) unstable; urgency=medium
+
+  * Snapshot, 20150922.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 24 Sep 2015 01:50:58 +0200
+
+libabigail (0.1~20150814-1) unstable; urgency=medium
+
+  * Snapshot, 20150814.
+  * Rename libabigail-tools to abigail-tools.
+  * Split out a abigail-doc package. Closes: #789821.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 14 Aug 2015 12:33:01 +0200
+
+libabigail (0.1~20150731-3) unstable; urgency=medium
+
+  * Build-depend on rpm2cpio and cpio, tools package suggests these.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 07 Aug 2015 11:56:07 +0200
+
+libabigail (0.1~20150731-2) unstable; urgency=medium
+
+  * abipkgdiff: Add support for Debian binary packages.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 06 Aug 2015 22:36:41 +0200
+
+libabigail (0.1~20150731-1) unstable; urgency=medium
+
+  * Snapshot, 20150731.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 06 Aug 2015 09:47:59 +0200
+
+libabigail (0.1~20150623-2) unstable; urgency=medium
+
+  * Build-depend on texinfo.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 23 Jun 2015 23:38:10 +0200
+
+libabigail (0.1~20150623-1) unstable; urgency=medium
+
+  * Snapshot, 20150623.
+  * Stop building abiar, deprecated.
+  * Build and install the manual pages.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 23 Jun 2015 12:26:42 +0200
+
+libabigail (0.1~20150411-1) unstable; urgency=medium
+
+  * Snapshot, 20150411.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 11 Apr 2015 02:43:44 +0200
+
+libabigail (0.1~20150306-1) experimental; urgency=medium
+
+  * Snapshot, 20150306.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 06 Mar 2015 18:50:44 +0100
+
+libabigail (0.1~20141111-1) experimental; urgency=medium
+
+  * Snapshot, 20141111.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 11 Nov 2014 12:19:03 +0100
+
+libabigail (0.1~20141009-1) experimental; urgency=medium
+
+  * Snapshot, 20141009.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Oct 2014 23:42:37 +0200
+
+libabigail (0.1~20140812-1) experimental; urgency=low
+
+  * Initial release (Closes: #757939).
+
+ -- Matthias Klose <doko@debian.org>  Tue, 12 Aug 2014 16:40:49 +0200
